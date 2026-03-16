@@ -1,0 +1,88 @@
+/* Default Styling */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    color: #000;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+}
+
+/* Header Styling */
+
+.header {
+    margin: 0 auto;
+    padding: 3px 30px;
+    background: #000;
+    color: #fff;
+}
+
+.header__inner {
+    display: flex;
+    width: 100%;
+    min-height: 70px;
+    align-items: center;
+}
+
+.header-utilities {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    width: 100%;
+}
+
+.header__logo {
+    margin: 0;
+}
+
+.search-box {
+    flex: 1;
+    padding: 5px 25px;
+    border: solid 1px;
+    border-radius: 5px;
+    background: #fff;
+    color: #000;
+}
+
+.search-box input {
+    appearance: none;
+    border: none;
+    outline: none;
+    background: transparent;
+    margin: 0;
+    padding: 0;
+    font-size: inherit;
+    font-family: inherit;
+}
+
+.nav {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+    margin-left: auto;
+}
+
+.nav__item {
+    display: block;
+    padding: 5px 5px;
+    text-align: center;
+    color: #fff;
+}
+
+.nav__item--highlight {
+    display: block;
+    padding: 5px 20px;
+    border-radius: 3px;
+    background: #fff;
+    color: #000;
+    text-align: center;
+}
+
+.nav__item a,
+.nav__item--highlight a {
+    text-decoration: none;
+    color: inherit;
+}
