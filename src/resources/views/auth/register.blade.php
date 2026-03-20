@@ -5,12 +5,12 @@
 @endsection
 
 @section('content')
-<div class="containar">
+<div class="content">
     <h1 class="title">会員登録</h1>
     <div class="form__wrap">
         <form class="register-form" action="/register" method="post" novalidate>
         @csrf
-            <div class="form__label">ユーザー名</div>
+            <div class="resister-form__label">ユーザー名</div>
                 <input type="text" name="name" value="{{ old('name') }}" />
                 <div class="form__error">
                     @error('name')

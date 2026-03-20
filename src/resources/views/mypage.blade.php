@@ -29,7 +29,7 @@
       <h2 class="profile-info__name">{{ Auth::user()->name }}</h2>
     </div>
     <div class="profile-info__right">
-      <a href="/profile" class="profile-info__edit-btn">プロフィールを編集</a>
+      <a href="/mypage/profile" class="profile-info__edit-btn">プロフィールを編集</a>
     </div>
   </div>
 

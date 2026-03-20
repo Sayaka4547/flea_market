@@ -1,0 +1,87 @@
+.content {
+    margin: 0 auto;
+    padding: 60px 0;
+    width: 100%;
+    max-width: 500px;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.form__wrap {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.register-form {
+    width: 100%;
+}
+
+.resister-form__label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px;
+    text-align: left;
+}
+
+.register-form input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+    margin-bottom: 5px;
+}
+
+/* エラーメッセージ */
+.form__error {
+    color: #ff4d4f;
+    font-size: 12px;
+    min-height: 20px;
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+/* エラーブロックがない場合の余白調整 */
+.register-form input:not(:has(+ .form__error)) {
+    margin-bottom: 20px;
+}
+
+.register-form button {
+    width: 100%;
+    padding: 15px;
+    background-color: #ff4d4f;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: opacity 0.2s ease;
+}
+
+.register-form button:hover {
+    opacity: 0.8;
+}
+
+/* ログインリンク */
+.login {
+    display: block;
+    text-align: center;
+    color: #007bff;
+    text-decoration: none;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.login:hover {
+    text-decoration: underline;
+}

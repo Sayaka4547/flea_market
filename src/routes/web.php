@@ -27,7 +27,7 @@ Route::get('/login', function () {
     return view('auth.login');
 })->name('login');
 
-Route::get('/profile', function () {
+Route::get('/mypage/profile', function () {
     return view('profile');
 })->name('profile');
 
@@ -35,4 +35,4 @@ Route::get('/mypage', function () {
     return view('mypage');
 })->middleware('auth')->name('mypage');
 
-Route::get('/exhibition', [CategoryController::class, 'create']);
+Route::get('/sell', [CategoryController::class, 'create']);

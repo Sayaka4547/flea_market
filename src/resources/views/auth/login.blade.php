@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-<div class="container">
+<div class="content">
     <h1 class="title">ログイン</h1>
     <div class="form__wrap">
         <form class="login-form" action="/login" method="post" novalidate>
@@ -27,6 +27,6 @@
             </div>
         </form>
     </div>
-    <a class="login" href="/login">会員登録はこちら</a>
+    <a class="register" href="/register">会員登録はこちら</a>
 </div>
 @endsection
