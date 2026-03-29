@@ -24,15 +24,18 @@
   </div>
 
   <div class="item-list">
-    <!-- 商品リストのループ (例としてダミーデータを表示する想定) -->
-    @for($i = 0; $i < 8; $i++)
-    <div class="item-card">
-      <div class="item-card__image">
-        <span class="item-card__image-text">商品画像</span>
-      </div>
-      <p class="item-card__name">商品名</p>
+  @foreach($items as $item)
+  <div class="item-card">
+    <div class="item-card__image">
+    @if($item->image)
+      <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->name }}">
+    @else
+      <span class="item-card__image-text">商品画像</span>
+    @endif
     </div>
-    @endfor
+    <p class="item-card__name">{{ $item->name }}</p>
+  </div>
+  @endforeach
   </div>
 
 </div>

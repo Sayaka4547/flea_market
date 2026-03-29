@@ -14,21 +14,25 @@ class CategoriesSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('categories')->insert([
-        ['category' => 'ファッション'],
-        ['category' => '家電'],
-        ['category' => 'インテリア'],
-        ['category' => 'レディース'],
-        ['category' => 'メンズ'],
-        ['category' => 'コスメ'],
-        ['category' => '本'],
-        ['category' => 'ゲーム'],
-        ['category' => 'スポーツ'],
-        ['category' => 'キッチン'],
-        ['category' => 'ハンドメイド'],
-        ['category' => 'アクセサリー'],
-        ['category' => 'おもちゃ'],
-        ['category' => 'ベビー・キッズ'],
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;'); // 外部キー制約を無効化
+        DB::table('categories')->truncate();
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;'); // 外部キー制約を再度有効化
+
+        DB::table('categories') ->insert([
+        ['name' => 'ファッション'],
+        ['name' => '家電'],
+        ['name' => 'インテリア'],
+        ['name' => 'レディース'],
+        ['name' => 'メンズ'],
+        ['name' => 'コスメ'],
+        ['name' => '本'],
+        ['name' => 'ゲーム'],
+        ['name' => 'スポーツ'],
+        ['name' => 'キッチン'],
+        ['name' => 'ハンドメイド'],
+        ['name' => 'アクセサリー'],
+        ['name' => 'おもちゃ'],
+        ['name' => 'ベビー・キッズ'],
         ]);
     }
 }

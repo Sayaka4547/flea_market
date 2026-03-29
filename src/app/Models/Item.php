@@ -9,6 +9,7 @@ class Item extends Model
 {
     use HasFactory;
     protected $fillable = [
+        'user_id',
         'name',
         'bland',
         'price',
@@ -17,4 +18,16 @@ class Item extends Model
         'image',
         'status'
     ];
+    // 出品したユーザーとのリレーション
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    // カテゴリーとのリレーション（中間テーブル）
+    public function categories()
+    {
+        return $this->belongsToMany(Category::class, 'category_item');
+    }
+
 }

@@ -1,0 +1,21 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Item;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
+class ItemController extends Controller
+{
+    /**
+     * 商品一覧を表示する
+     */
+    public function index()
+    {
+        $items = Item::where('user_id', '!=', Auth::id())->get();
+
+        return view('index', compact('items'));
+    }
+
+}
