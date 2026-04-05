@@ -18,4 +18,12 @@ class ItemController extends Controller
         return view('index', compact('items'));
     }
 
+    public function show($item_id)
+    {
+        // 商品情報を取得
+        $item = Item::with(['categories', 'comments.user.profile', 'likes'])->findOrFail($item_id);
+
+        return view('item.detail', compact('item'));
+    }
+
 }

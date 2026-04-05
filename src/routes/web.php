@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Http\Controllers\RegisteredUserController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ItemController;
+use App\Http\Controllers\PurchaseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,3 +36,8 @@ Route::get('/mypage', function () {
 })->middleware('auth')->name('mypage');
 
 Route::get('/sell', [CategoryController::class, 'create']);
+
+Route::get('/item/{item_id}', [ItemController::class, 'show']);
+
+Route::get('/purchase/{item_id}', [PurchaseController::class, 'index'])->middleware('auth');
+Route::post('/purchase/{item_id}', [PurchaseController::class, 'store'])->middleware('auth');

@@ -25,7 +25,7 @@
 
   <div class="item-list">
   @foreach($items as $item)
-  <div class="item-card">
+  <a href="/item/{{ $item->id }}" class="item-card">
     <div class="item-card__image">
     @if($item->image)
       <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->name }}">
@@ -34,7 +34,7 @@
     @endif
     </div>
     <p class="item-card__name">{{ $item->name }}</p>
-  </div>
+  </a>
   @endforeach
   </div>
 
