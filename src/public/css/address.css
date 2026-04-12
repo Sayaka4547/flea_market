@@ -1,0 +1,94 @@
+/* ===========================
+   住所変更ページ
+=========================== */
+
+.address-page {
+    max-width: 600px;
+    margin: 60px auto;
+    padding: 40px 60px;
+    background-color: #fff;
+}
+
+.address-page__title {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+/* ===========================
+   フォーム
+=========================== */
+
+.address-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-label {
+    font-size: 14px;
+    color: #333;
+    font-weight: normal;
+}
+
+.form-input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333;
+    background-color: #fff;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.form-input:focus {
+    border-color: #999;
+}
+
+.form-input.is-error {
+    border-color: #e74c3c;
+}
+
+.form-error {
+    font-size: 12px;
+    color: #e74c3c;
+    margin: 0;
+}
+
+/* ===========================
+   送信ボタン
+=========================== */
+
+.form-submit {
+    margin-top: 16px;
+}
+
+.submit-btn {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    background-color: #ff6b6b;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.2s;
+}
+
+.submit-btn:hover {
+    background-color: #e05555;
+}

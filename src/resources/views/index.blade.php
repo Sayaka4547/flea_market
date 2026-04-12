@@ -18,9 +18,8 @@
 <div class="content">
 
   <div class="tabs">
-    <!-- 現在のURLやクエリパラメータでアクティブなタブを判定 -->
-    <a href="/mypage?tab=sell" class="tabs__tab {{ request('tab', 'sell') === 'sell' ? 'mypage-tabs__tab--active' : '' }}">おすすめ</a>
-    <a href="/mypage?tab=buy" class="tabs__tab {{ request('tab') === 'buy' ? 'mypage-tabs__tab--active' : '' }}">マイリスト</a>
+    <a href="/?tab=recommend" class="tabs__tab {{ $tab === 'recommend' ? 'tabs__tab--active' : '' }}">おすすめ</a>
+    <a href="/?tab=mylist" class="tabs__tab {{ $tab === 'mylist' ? 'tabs__tab--active' : '' }}">マイリスト</a>
   </div>
 
   <div class="item-list">
@@ -31,6 +30,9 @@
       <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->name }}">
     @else
       <span class="item-card__image-text">商品画像</span>
+    @endif
+    @if($item->status === 'sold_out')
+      <div class="item-card__sold-label">Sold</div>
     @endif
     </div>
     <p class="item-card__name">{{ $item->name }}</p>

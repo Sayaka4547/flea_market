@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\Category;
 use App\Models\Comment;
 use App\Models\Like;
+use App\Models\Purchase;
 
 
 class Item extends Model
@@ -22,6 +23,10 @@ class Item extends Model
         'image',
         'status'
     ];
+
+    const STATUS_ON_SALE = 'on_sale';
+    const STATUS_SOLD_OUT = 'sold_out';
+
     // 出品したユーザーとのリレーション
     public function user()
     {
@@ -45,5 +50,9 @@ class Item extends Model
     {
     return $this->hasMany(Like::class);
     }
-
+    // 購入情報とのリレーション
+    public function purchase()
+    {
+        return $this->hasOne(Purchase::class);
+    }
 }

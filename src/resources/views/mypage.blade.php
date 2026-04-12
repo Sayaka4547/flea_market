@@ -34,21 +34,30 @@
   </div>
 
   <div class="mypage-tabs">
-    <!-- 現在のURLやクエリパラメータでアクティブなタブを判定 -->
-    <a href="/mypage?tab=sell" class="mypage-tabs__tab {{ request('tab', 'sell') === 'sell' ? 'mypage-tabs__tab--active' : '' }}">出品した商品</a>
-    <a href="/mypage?tab=buy" class="mypage-tabs__tab {{ request('tab') === 'buy' ? 'mypage-tabs__tab--active' : '' }}">購入した商品</a>
+    <a href="/mypage?tab=sell" class="mypage-tabs__tab {{ $tab === 'sell' ? 'mypage-tabs__tab--active' : '' }}">出品した商品</a>
+    <a href="/mypage?tab=buy" class="mypage-tabs__tab {{ $tab === 'buy' ? 'mypage-tabs__tab--active' : '' }}">購入した商品</a>
   </div>
 
   <div class="item-list">
-    <!-- 商品リストのループ (例としてダミーデータを表示する想定) -->
-    @for($i = 0; $i < 8; $i++)
-    <div class="item-card">
+    @forelse($items as $item)
+    <a href="/item/{{ $item->id }}" class="item-card">
       <div class="item-card__image">
-        <span class="item-card__image-text">商品画像</span>
+        @if($item->image)
+          <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->name }}">
+        @else
+          <span class="item-card__image-text">商品画像</span>
+        @endif
+        {{-- 購入済みの場合はSoldラベルを表示 --}}
+        @if($item->purchase)
+          <div class="item-card__sold-label">Sold</div>
+        @endif
       </div>
-      <p class="item-card__name">商品名</p>
-    </div>
-    @endfor
+      <p class="item-card__name">{{ $item->name }}</p>
+    </a>
+    @empty
+      <p class="item-list__empty">表示する商品がありません。</p>
+    @endforelse
   </div>
+  
 </div>
 @endsection

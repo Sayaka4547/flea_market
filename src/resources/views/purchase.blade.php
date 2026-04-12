@@ -49,7 +49,7 @@
         <div class="shipping-address">
             <div class="shipping-address__header">
                 <h3 class="section-title">配送先</h3>
-                <a href="/profile/edit" class="shipping-address__change-btn">変更する</a>
+                <a href="{{ route('address.edit', ['item_id' => $item->id])}}" class="shipping-address__change-btn">変更する</a>
             </div>
             <div class="shipping-address__info">
                 @if($user->profile && $user->profile->postal_code)
