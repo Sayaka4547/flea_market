@@ -20,7 +20,7 @@
 
 - お問合せ画面：http://localhost/
 - ユーザー登録：http://localhost/register
-- 管理者画面：http://localhost/admin
+- ログイン画面：http://localhost/login
 - phpMyAdmin：http://localhost:8080/
 
 ##使用技術
@@ -35,3 +35,4 @@
 - Laravel Fortify 1.19.1（認証機能）
 
 ##ER図
+<img width="1621" height="851" alt="flea-market drawio (3)" src="https://github.com/user-attachments/assets/0e452e1c-b08b-45ee-b231-7cfd43450ea2" />
