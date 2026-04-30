@@ -157,4 +157,10 @@ return [
         ]),
     ],
 
+    'redirects' => [
+    'register' => '/mypage/profile',
+    'login'    => '/',
+    'logout'   => '/',
+    ],
+
 ];

@@ -24,7 +24,7 @@ class MypageController extends Controller
         $items = Item::where('user_id', $user->id)->with('purchase')->get();
     }
 
-    return view('mypage.index', compact('items', 'tab'));
+    return view('mypage', compact('items', 'tab'));
     }
 
 }

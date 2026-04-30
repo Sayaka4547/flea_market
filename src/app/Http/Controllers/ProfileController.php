@@ -18,7 +18,7 @@ class ProfileController extends Controller
         $user = Auth::user();
         $profile = $user->profile ?? new Profile(); // プロフィールがない場合は空のインスタンスを渡す
 
-        return view('profile.edit', compact('user', 'profile'));
+        return view('profile', compact('user', 'profile'));
     }
 
     /**

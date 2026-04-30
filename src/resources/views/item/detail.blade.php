@@ -28,7 +28,7 @@
   <!-- 右側：商品情報 -->
   <div class="item-detail__info">
     <h2 class="item-detail__name">{{ $item->name }}</h2>
-    <p class="item-detail__brand">{{ $item->brand }}</p>
+    <p class="item-detail__brand">{{ $item->bland }}</p>
     <p class="item-detail__price">¥{{ number_format($item->price) }} <span class="tax">(税込)</span></p>
 
     <!-- いいね・コメントアイコン -->

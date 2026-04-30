@@ -5,7 +5,7 @@
 @endsection
 
 @section('search')
-        <x-search-box />
+        <x-search-box :value="$search ?? ''"/>
 @endsection
 
 @section('navigation')

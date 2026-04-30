@@ -18,7 +18,7 @@ class CommentController extends Controller
     {
         // 1. バリデーション（後でFormRequestに切り替えることも可能）
         $request->validate([
-            'comment' => 'required|string|max:1000',
+            'comment' => 'required|string|max:255',
         ]);
 
         // 2. コメントの保存
