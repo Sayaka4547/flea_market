@@ -4,27 +4,33 @@
 
 ### Dockerビルド
 
-- ```bash
-- git clone
-- docker-compose up -d --build
-※ DockerfileにてPHP GD拡張を有効化しています。画像アップロード機能の動作に必要です。
+```bash
+git clone
+docker-compose up -d --build
+```
+
+> ※ DockerfileにてPHP GD拡張を有効化しています。画像アップロード機能の動作に必要です。
 
 ### Laravel環境構築
 
-- docker-compose exec php bash
-- composer install
-- cp .env.example .env
-- php artisan key:generate
-- php artisan migrate
-- php artisan db:seed
-- php artisan storage:link
+```bash
+docker-compose exec php bash
+composer install
+cp .env.example .env
+php artisan key:generate
+php artisan migrate
+php artisan db:seed
+php artisan storage:link
+```
 
-（`.env`の以下の環境変数を適宜設定してください）
-`DB_DATABASE`
-`DB_USERNAME`
-`DB_PASSWORD`
-`STRIPE_KEY`
-`STRIPE_SECRET`
+`.env`の以下の環境変数を適宜設定してください
+| 変数名 | 説明 |
+|---|---|
+| `DB_DATABASE` | データベース名 |
+| `DB_USERNAME` | DBユーザー名 |
+| `DB_PASSWORD` | DBパスワード |
+| `STRIPE_KEY` | Stripe公開キー |
+| `STRIPE_SECRET` | Stripeシークレットキー |
 
 ## 開発環境
 
