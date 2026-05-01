@@ -139,7 +139,8 @@ class LikeCommentPurchaseTest extends TestCase
             'address'     => '東京都渋谷区',
             'building'    => 'テストビル',
         ]);
-
+        /** @var \App\Models\User $buyer */
+        $buyer = User::find($buyer->id);
         $response = $this->actingAs($buyer)->post('/purchase/' . $item->id, [
             'payment_id' => $payment->id,
         ]);
@@ -154,6 +155,7 @@ class LikeCommentPurchaseTest extends TestCase
     public function 購入した商品は商品一覧画面でSoldと表示される()
     {
         $seller = User::factory()->create(['email_verified_at' => now()]);
+        /** @var \App\Models\User $buyer */
         $buyer  = User::factory()->create(['email_verified_at' => now()]);
         $item   = Item::factory()->create(['user_id' => $seller->id, 'status' => 'on_sale']);
 
@@ -188,7 +190,8 @@ class LikeCommentPurchaseTest extends TestCase
             'address'     => '東京都渋谷区',
             'building'    => 'テストビル',
         ]);
-
+        /** @var \App\Models\User $buyer */
+        $buyer = User::find($buyer->id);
         $this->actingAs($buyer)->post('/purchase/' . $item->id, [
             'payment_id' => $payment->id,
         ]);
